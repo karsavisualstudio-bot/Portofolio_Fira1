@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio DKV | Kreator Visual</title>
+    
+    <!-- Google Fonts: Space Grotesk untuk Heading (Artsy/Modern) & Inter untuk Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#f5f5f4', // stone-100
+                            dark: '#1c1917',  // stone-900
+                            accent: '#6366f1', // indigo-500
+                            accent2: '#ec4899', // pink-500
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animasi Kustom */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        
+        /* Efek Teks Gradasi Animasi */
+        .animate-gradient {
+            background-size: 200% auto;
+            animation: textShine 4s linear infinite;
+        }
+        @keyframes textShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Styling Progress Bar */
+        .progress-bar-fill {
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-brand-light/90 backdrop-blur-md z-50 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-bold tracking-tighter">
+                Kreator<span class="text-brand-accent">.</span>Visual
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#tentang" class="hover:text-brand-accent transition-colors">Tentang</a>
+                <a href="#keahlian" class="hover:text-brand-accent transition-colors">Keahlian</a>
+                <a href="#portofolio" class="hover:text-brand-accent transition-colors">Portofolio</a>
+                <a href="#kontak" class="px-4 py-2 bg-brand-dark text-white rounded-full hover:bg-brand-accent transition-colors">Hubungi Saya</a>
+            </div>
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-2xl focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-light border-b border-stone-200 px-6 py-4 space-y-4 shadow-lg absolute w-full">
+            <a href="#tentang" class="block text-brand-dark hover:text-brand-accent">Tentang</a>
+            <a href="#keahlian" class="block text-brand-dark hover:text-brand-accent">Keahlian</a>
+            <a href="#portofolio" class="block text-brand-dark hover:text-brand-accent">Portofolio</a>
+            <a href="#kontak" class="block text-brand-dark hover:text-brand-accent">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden pt-20">
+        <!-- Dekorasi Background -->
+        <div class="absolute w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl -top-10 -left-10 z-0"></div>
+        <div class="absolute w-96 h-96 bg-brand-accent2/20 rounded-full blur-3xl bottom-10 -right-10 z-0"></div>
+
+        <div class="z-10 max-w-4xl fade-in-section">
+            <p class="text-sm md:text-base font-semibold uppercase tracking-[0.2em] text-brand-accent mb-4">Halo, Selamat Datang di Dunia Kreatif Saya</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 leading-tight">
+                Saya <span class="bg-gradient-to-r from-brand-accent via-purple-500 to-brand-accent2 text-transparent bg-clip-text animate-gradient">Alexandra</span>.
+            </h1>
+            <p class="text-xl md:text-2xl text-stone-600 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+                Siswa SMK Jurusan Desain Komunikasi Visual (DKV). Mengubah ide abstrak menjadi karya visual yang berbicara.
+            </p>
+            <a href="#portofolio" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-brand-dark rounded-full overflow-hidden transition-transform hover:scale-105">
+                <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                <span class="relative flex items-center gap-2">
+                    Lihat Karya Saya <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Tentang Saya -->
+    <section id="tentang" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in-section">
+                <div class="relative">
+                    <!-- Placeholder Foto Profil -->
+                    <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl relative group">
+                        <img src="https://placehold.co/800x800/d6d3d1/1c1917?text=Foto+Profil" alt="Foto Profil" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"></div>
+                    </div>
+                    <!-- Ornamen -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-accent2/10 rounded-full blur-xl"></div>
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 relative inline-block">
+                        Tentang Saya
+                        <div class="absolute -bottom-2 left-0 w-1/2 h-2 bg-brand-accent rounded-full"></div>
+                    </h2>
+                    <p class="text-stone-600 mb-6 text-lg leading-relaxed">
+                        Saat ini saya menempuh pendidikan di Sekolah Menengah Kejuruan (SMK) dengan fokus pada Desain Komunikasi Visual (DKV). Saya memiliki ketertarikan besar pada desain grafis, ilustrasi, dan desain UI/UX.
+                    </p>
+                    <p class="text-stone-600 mb-8 text-lg leading-relaxed">
+                        Bagi saya, desain bukan hanya tentang membuat sesuatu terlihat indah, tetapi juga tentang memecahkan masalah dan menyampaikan pesan dengan efektif. Saya selalu antusias untuk belajar hal-hal baru dan mengembangkan gaya visual saya.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full border border-stone-300 text-stone-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full border border-stone-300 text-stone-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all">
+                            <i class="fab fa-behance text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full border border-stone-300 text-stone-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all">
+                            <i class="fab fa-dribbble text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="keahlian" class="py-24 px-6 bg-stone-50">
+        <div class="max-w-4xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Toolkit & Keahlian</h2>
+                <p class="text-stone-600 text-lg">Software dan alat yang saya gunakan untuk merealisasikan ide.</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Skill 1 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-adobe text-red-500 text-xl"></i>
+                            <span class="font-medium font-heading">Adobe Illustrator</span>
+                        </div>
+                        <span class="text-stone-500 font-medium">90%</span>
+                    </div>
+                    <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-400 to-red-500 h-3 rounded-full progress-bar-fill w-0" data-width="90%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-adobe text-blue-500 text-xl"></i>
+                            <span class="font-medium font-heading">Adobe Photoshop</span>
+                        </div>
+                        <span class="text-stone-500 font-medium">85%</span>
+                    </div>
+                    <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full progress-bar-fill w-0" data-width="85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fab fa-figma text-purple-500 text-xl"></i>
+                            <span class="font-medium font-heading">Figma (UI/UX)</span>
+                        </div>
+                        <span class="text-stone-500 font-medium">75%</span>
+                    </div>
+                    <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-pink-400 to-purple-500 h-3 rounded-full progress-bar-fill w-0" data-width="75%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4 -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-palette text-teal-500 text-xl"></i>
+                            <span class="font-medium font-heading">Canva & Desain Layout</span>
+                        </div>
+                        <span class="text-stone-500 font-medium">95%</span>
+                    </div>
+                    <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-teal-400 to-emerald-500 h-3 rounded-full progress-bar-fill w-0" data-width="95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portofolio -->
+    <section id="portofolio" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto fade-in-section">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Galeri Karya</h2>
+                    <p class="text-stone-600 text-lg max-w-lg">Beberapa proyek pilihan dari tugas sekolah maupun proyek pribadi.</p>
+                </div>
+                <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto">
+                    <button class="px-5 py-2 bg-brand-dark text-white rounded-full text-sm font-medium whitespace-nowrap">Semua</button>
+                    <button class="px-5 py-2 bg-stone-100 text-stone-600 rounded-full text-sm font-medium hover:bg-stone-200 whitespace-nowrap transition-colors">Logo</button>
+                    <button class="px-5 py-2 bg-stone-100 text-stone-600 rounded-full text-sm font-medium hover:bg-stone-200 whitespace-nowrap transition-colors">Ilustrasi</button>
+                    <button class="px-5 py-2 bg-stone-100 text-stone-600 rounded-full text-sm font-medium hover:bg-stone-200 whitespace-nowrap transition-colors">Poster</button>
+                </div>
+            </div>
+
+            <!-- Grid Galeri -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://placehold.co/800x600/ff9f1c/ffffff?text=Desain+Logo" alt="Desain Logo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <!-- Overlay Text -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent2 text-sm font-bold tracking-wider uppercase mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Branding</span>
+                        <h3 class="text-white text-2xl font-heading font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Logo Coffee Shop</h3>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://placehold.co/800x600/6366f1/ffffff?text=Ilustrasi+Digital" alt="Ilustrasi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-accent text-sm font-bold tracking-wider uppercase mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Ilustrasi</span>
+                        <h3 class="text-white text-2xl font-heading font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Karakter Maskot</h3>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://placehold.co/800x600/10b981/ffffff?text=Poster+Event" alt="Poster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-teal-400 text-sm font-bold tracking-wider uppercase mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Typography</span>
+                        <h3 class="text-white text-2xl font-heading font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Poster Festival Seni</h3>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://placehold.co/800x600/f43f5e/ffffff?text=Desain+Kemasan" alt="Packaging" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-pink-400 text-sm font-bold tracking-wider uppercase mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Packaging</span>
+                        <h3 class="text-white text-2xl font-heading font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Kemasan Cokelat</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://placehold.co/800x600/8b5cf6/ffffff?text=UI+Design" alt="UI Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-purple-400 text-sm font-bold tracking-wider uppercase mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">UI/UX</span>
+                        <h3 class="text-white text-2xl font-heading font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Aplikasi Belajar</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 flex items-center justify-center bg-stone-100 border-2 border-dashed border-stone-300">
+                    <div class="text-center p-6 transform transition-transform group-hover:scale-110">
+                        <i class="fas fa-plus-circle text-4xl text-stone-400 mb-3"></i>
+                        <h3 class="text-stone-600 font-heading font-bold text-xl">Karya Lainnya</h3>
+                        <p class="text-sm text-stone-500 mt-2">Segera Datang</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                 <button class="px-8 py-3 bg-white border-2 border-brand-dark text-brand-dark rounded-full font-bold hover:bg-brand-dark hover:text-white transition-all duration-300">
+                    Muat Lebih Banyak
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-24 px-6 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Dekorasi Background -->
+        <div class="absolute w-[500px] h-[500px] bg-brand-accent/20 rounded-full blur-[100px] top-0 right-0 pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10 fade-in-section">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Mari Berkolaborasi!</h2>
+                    <p class="text-stone-300 text-lg mb-10 leading-relaxed">
+                        Tertarik dengan karya saya atau butuh desain untuk project Anda? Jangan ragu untuk menghubungi saya. Mari ciptakan sesuatu yang luar biasa bersama.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-accent transition-colors">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-400">Email</p>
+                                <p class="font-medium">halo@alexandra.design</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-accent2 transition-colors">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-400">WhatsApp</p>
+                                <p class="font-medium">+62 812 3456 7890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10">
+                    <form onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim! (Simulasi)');">
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-stone-300 mb-2">Nama Anda</label>
+                            <input type="text" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="John Doe">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-stone-300 mb-2">Email</label>
+                            <input type="email" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="john@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-stone-300 mb-2">Pesan</label>
+                            <textarea required rows="4" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all resize-none" placeholder="Halo, saya ingin..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-accent hover:bg-indigo-600 text-white rounded-xl font-bold transition-colors shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]">
+                            Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-brand-dark text-center border-t border-white/10">
+        <p class="text-stone-400 text-sm">
+            &copy; <span id="year"></span> Alexandra Portofolio. Dibuat dengan ☕ dan Kreativitas.
+        </p>
+    </footer>
+
+    <!-- JavaScript untuk Interaktivitas & Animasi -->
+    <script>
+        // Set tahun hak cipta otomatis
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Intersection Observer untuk efek Fade-in saat di-scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll('.fade-in-section');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        
+                        // Animasi khusus untuk progress bar saat muncul di layar
+                        if(entry.target.querySelector('.progress-bar-fill')) {
+                            const bars = entry.target.querySelectorAll('.progress-bar-fill');
+                            bars.forEach(bar => {
+                                // Berikan sedikit jeda
+                                setTimeout(() => {
+                                    bar.style.width = bar.getAttribute('data-width');
+                                }, 300);
+                            });
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
