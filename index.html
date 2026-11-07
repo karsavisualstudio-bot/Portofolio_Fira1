@@ -168,19 +168,6 @@
             </div>
             
             <div class="space-y-8">
-                <!-- Skill 1 -->
-                <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                            <span class="font-medium font-heading">Ibis Paint</span>
-                        </div>
-                        <span class="text-stone-500 font-medium">95%</span>
-                    </div>
-                    <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
-                        <div class="bg-gradient-to-r from-indigo-400 to-blue-500 h-3 rounded-full progress-bar-fill w-0" data-width="95%"></div>
-                    </div>
-                </div>
-
                 <!-- Skill 2 -->
                 <div>
                     <div class="flex justify-between items-center mb-2">
@@ -243,19 +230,6 @@
                     </div>
                     <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
                         <div class="bg-gradient-to-r from-pink-400 to-rose-500 h-3 rounded-full progress-bar-fill w-0" data-width="90%"></div>
-                    </div>
-                </div>
-
-                <!-- Skill 7 -->
-                <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                            <span class="font-medium font-heading">Canva</span>
-                        </div>
-                        <span class="text-stone-500 font-medium">90%</span>
-                    </div>
-                    <div class="w-full bg-stone-200 rounded-full h-3 overflow-hidden">
-                        <div class="bg-gradient-to-r from-teal-400 to-emerald-500 h-3 rounded-full progress-bar-fill w-0" data-width="90%"></div>
                     </div>
                 </div>
 
@@ -392,61 +366,84 @@
         </div>
     </section>
 
-    <!-- Kontak -->
+<!-- Kontak -->
     <section id="kontak" class="py-24 px-6 bg-brand-dark text-white relative overflow-hidden">
-        <!-- Dekorasi Background -->
+        <!-- Dekorasi Background: Grid pattern tipis & Glow -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 30px 30px;"></div>
         <div class="absolute w-[500px] h-[500px] bg-brand-accent/20 rounded-full blur-[100px] top-0 right-0 pointer-events-none"></div>
+        <div class="absolute w-[400px] h-[400px] bg-brand-accent2/10 rounded-full blur-[100px] bottom-0 left-0 pointer-events-none"></div>
 
         <div class="max-w-5xl mx-auto relative z-10 fade-in-section">
-            <div class="grid md:grid-cols-2 gap-16">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                
+                <!-- Teks & Info Kontak -->
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Mari Berkolaborasi!</h2>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 bg-gradient-to-r from-brand-accent to-brand-accent2 bg-clip-text text-transparent pb-1">
+                        Mari Berkolaborasi!
+                    </h2>
                     <p class="text-stone-300 text-lg mb-10 leading-relaxed">
-                        Tertarik dengan karya saya atau butuh desain untuk project Anda? Jangan ragu untuk menghubungi saya. Mari ciptakan sesuatu yang luar biasa bersama.
+                        Tertarik dengan karya saya atau butuh desain untuk <span class="text-white font-semibold border-b border-brand-accent pb-0.5">project Anda</span>? Jangan ragu untuk menghubungi saya. Mari ciptakan <span class="text-white font-semibold border-b border-brand-accent2 pb-0.5">sesuatu yang luar biasa</span> bersama.
                     </p>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-accent transition-colors">
-                                <i class="fas fa-envelope"></i>
+                    <div class="space-y-4">
+                        <!-- Card Email -->
+                        <a href="mailto:halo@alexandra.design" class="flex items-center gap-5 group cursor-pointer p-4 -ml-4 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/10">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-accent group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all duration-300">
+                                <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-stone-400">Email</p>
-                                <p class="font-medium">halo@alexandra.design</p>
+                                <p class="text-sm text-stone-400 group-hover:text-stone-300 transition-colors">Email</p>
+                                <p class="font-medium text-lg">halo@alexandra.design</p>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-accent2 transition-colors">
-                                <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                        
+                        <!-- Card WhatsApp -->
+                        <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center gap-5 group cursor-pointer p-4 -ml-4 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/10">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-accent2 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-all duration-300">
+                                <i class="fab fa-whatsapp text-2xl"></i>
                             </div>
                             <div>
-                                <p class="text-sm text-stone-400">WhatsApp</p>
-                                <p class="font-medium">+62 812 3456 7890</p>
+                                <p class="text-sm text-stone-400 group-hover:text-stone-300 transition-colors">WhatsApp</p>
+                                <p class="font-medium text-lg">+62 812 3456 7890</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Form -->
-                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10">
-                    <form onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim! (Simulasi)');">
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-stone-300 mb-2">Nama Anda</label>
-                            <input type="text" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="John Doe">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-stone-300 mb-2">Email</label>
-                            <input type="email" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all" placeholder="john@example.com">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-stone-300 mb-2">Pesan</label>
-                            <textarea required rows="4" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all resize-none" placeholder="Halo, saya ingin..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 bg-brand-accent hover:bg-indigo-600 text-white rounded-xl font-bold transition-colors shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]">
-                            Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
+                <!-- Form dengan efek Glassmorphism & Glow -->
+                <div class="relative group/formbox">
+                    <!-- Efek Glow di belakang form -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-accent2 rounded-3xl blur opacity-25 group-hover/formbox:opacity-40 transition duration-1000 group-hover/formbox:duration-200"></div>
+                    
+                    <div class="relative bg-brand-dark/80 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl">
+                        <form onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim! (Simulasi)');">
+                            
+                            <!-- Input Nama -->
+                            <div class="mb-6 group/input">
+                                <label class="block text-sm font-medium text-stone-300 mb-2 group-focus-within/input:text-brand-accent transition-colors">Nama Anda</label>
+                                <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent focus:bg-white/10 focus:shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:border-white/30 transition-all" placeholder="John Doe">
+                            </div>
+                            
+                            <!-- Input Email -->
+                            <div class="mb-6 group/input">
+                                <label class="block text-sm font-medium text-stone-300 mb-2 group-focus-within/input:text-brand-accent transition-colors">Email</label>
+                                <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent focus:bg-white/10 focus:shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:border-white/30 transition-all" placeholder="john@example.com">
+                            </div>
+                            
+                            <!-- Input Pesan -->
+                            <div class="mb-8 group/input">
+                                <label class="block text-sm font-medium text-stone-300 mb-2 group-focus-within/input:text-brand-accent transition-colors">Pesan</label>
+                                <textarea required rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent focus:bg-white/10 focus:shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:border-white/30 transition-all resize-none" placeholder="Halo, saya ingin..."></textarea>
+                            </div>
+                            
+                            <!-- Tombol Kirim -->
+                            <button type="submit" class="w-full group/btn flex items-center justify-center py-4 bg-gradient-to-r from-brand-accent to-indigo-600 hover:from-indigo-500 hover:to-brand-accent2 text-white rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)]">
+                                Kirim Pesan <i class="fas fa-paper-plane ml-2 transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -454,7 +451,7 @@
     <!-- Footer -->
     <footer class="py-8 bg-brand-dark text-center border-t border-white/10">
         <p class="text-stone-400 text-sm">
-            &copy; <span id="year"></span> Alexandra Portofolio. Dibuat dengan ☕ dan Kreativitas.
+            &copy; <span id="year"></span>Portofolio Fira. Dibuat dengan ☕ dan Kreativitas.
         </p>
     </footer>
 
